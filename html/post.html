@@ -1,0 +1,33 @@
+<div class="blog-post" >
+	{{#edit_controls}}
+	<div class="col-xs-12 empty-message" {{#content}}style="display: none"{{/content}}>
+		<div class="well" >
+			<p>{{#__}}This page is currently empty. Click on the button below to create a page here.{{/__}}</P>
+			<button name="create-post" class="btn btn-default">{{#__}}Create page here{{/__}}</a>
+		</div>
+	</div>
+	{{/edit_controls}}
+	<div class="post-content" {{^content}}style="display: none"{{/content}}>
+		{{#edit_controls}}
+		<div class="col-xs-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="navbar-form navbar-left" role="search" style="width: 50%;">
+						<div class="form-group" style="width: 100%;">
+							<input type="text" class="form-control blog-post-property" placeholder="{{#__}}Title:{{/__}}" value="{{title}}" data-object-id="{{post_id}}" data-object-type="blog.post" data-rcpt="blog:post" data-property-name="title"/>
+						</div>
+					</div>
+					<div class="navbar-form navbar-right">
+						<button class="btn btn-default" name='edit-post'>Edit post</button>
+						<button class="btn btn-default" name="edit-content">Edit Content</button>
+					</div>
+			</nav>
+		</div>
+		{{/edit_controls}}
+		
+		<div class="editable" data-object-id="{{post_id}}" data-object-type="blog.post" data-rcpt="blog:post" data-property-name="content">&nbsp;
+			{{{content}}}
+		</div>
+	</div>
+	<div class="editor"></div>
+</div>
