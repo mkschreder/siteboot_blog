@@ -1,3 +1,7 @@
+/**
+ * SiteBoot Blog Plugin
+ **/
+ 
 var Plugin = function(){
 	
 }
